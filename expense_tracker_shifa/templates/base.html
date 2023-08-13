@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ExpenseManager</title>
+    <style>
+      body {
+        background: linear-gradient(to right, #ffdbdb, #e9d1e3,#ccffff, #ff99cc,#ff9966);
+        background-size: 400% 400%;
+        animation: gradient 16s ease infinite;
+      }
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+     integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+     
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.0/chart.min.js" integrity="sha512-qKyIokLnyh6o
+     SnWsc5h21uwMAQtljqMZZT17CIMXuCQNIfFSFF4tJdMOaJHL9fQdJUANid6OB6DRR0zdHrbWAw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success"style="background-image: linear-gradient(to right, #ccccff, #ffff99);">
+       <a class="navbar-brand text-dark" ><b>ESD GROUP 13-EXPENSE TRACKER APP</b></a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="NavbarNav">
+        <span class="navbar-toggle-icon"></span>
+       </button>
+       <div class="cd-flex ml-auto" id="navbarNav">
+        <nav class="m-2 my-md-0 mr-md-3">
+            <a class="btn m-2 btn-outline-warning" style="background-color: #00ccff; color: #ffffcc;" href="/displayExpenses">View Expenses</a>
+            <a class="btn m-2 btn-outline-warning" style="background-color: #ff6699; color:#ffffcc;" href="/add">Add Expenses</a>
+          </nav>
+       </div>
+      </nav>
+    {% block body %}
+    
+    {% endblock %}
+</body>
+</html>
